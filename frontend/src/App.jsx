@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [student,setStudent] = useState(null);
+  const [student,setStudent] = useState([]);
   const getStudentData = async () => {
     const response = await fetch('http://localhost:8080/student');
     const data = await response.json();
@@ -19,7 +19,7 @@ function App() {
       <p>course: {student.course}</p>
         </> )}
         </div>
-        
+      
   )
 }
 
