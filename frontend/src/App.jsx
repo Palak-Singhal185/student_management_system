@@ -11,14 +11,18 @@ function App() {
 
   return (
     <div>
-      <button onClick={getStudentData}> get student data</button> 
-      {student && (
-        <>
-        <h2>{student.id}</h2>
-      <p>name: {student.name}</p>
-      <p>course: {student.course}</p>
-        </> )}
+      <button onClick={getStudentData}>
+        Get Student Data
+      </button>
+
+      {student.map((s) => (
+        <div key={s.id}>
+          <h2>{s.id}</h2>
+          <p>Name: {s.name}</p>
+          <p>Course: {s.course}</p>
         </div>
+      ))}
+    </div>
       
   )
 }
